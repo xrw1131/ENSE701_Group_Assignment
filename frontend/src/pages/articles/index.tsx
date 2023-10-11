@@ -27,7 +27,7 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
       { key: "claim", label: "Claim" },
       { key: "evidence", label: "Evidence" },
     ];
-
+  
     return (
       <div className="container">
         <h1>Articles Index Page</h1>
@@ -36,7 +36,7 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
       </div>
     );
   };
-
+  
   export const getStaticProps: GetStaticProps<ArticlesProps> = async (_) => {
     // Map the data to ensure all articles have consistent property names
     const articles = data.articles.map((article) => ({
@@ -49,13 +49,14 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
       claim: article.claim,
       evidence: article.evidence,
     }));
-
-
+  
+  
     return {
       props: {
         articles,
       },
     };
   };
-
+  
   export default Articles;
+  
